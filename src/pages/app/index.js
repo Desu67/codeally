@@ -22,7 +22,7 @@ function Codeally(props) {
             navigate('/auth')
         } else {
             firebase.auth().signOut()
-            navigate('/')
+            navigate('/auth')
         }
     }
 
