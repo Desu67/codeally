@@ -9,7 +9,7 @@ function Button(props) {
             {icon &&
                 <img width="24px" height="24px" style={{ padding: '5px', objectFit: 'contain' }} src={icon} alt="icon"/>
             }
-            <a href={fileDownload} download style={{ fontSize: '17px', fontWeight: weight, color: colorText }}>{text}</a>
+            <a href={fileDownload} download style={{ fontSize: '17px', fontWeight: weight, color: colorText, textDecoration: 'none' }}>{text}</a>
         </div>
     )
 }

@@ -9614,6 +9614,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-parallax@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-3.3.0.tgz#79f7a33451e7a419d0052f795c5d3655aa1e20b4"
+  integrity sha512-gI7YdblxdbhZ1ISqaWzIqlPSuQLX76QFbzWKmeA0hCprjephVdVD35gCN+Fu8v0p3cfw+DFTN/PE+jYgcCOLUw==
+
 react-popper@^2.2.4:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.5.tgz#1214ef3cec86330a171671a4fbcbeeb65ee58e96"
