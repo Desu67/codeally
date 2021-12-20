@@ -8,7 +8,7 @@ import illustration from '../../assets/app_codeally.svg'
 // files download
 import androidFile from '../../assets/android.txt'
 import iosFile from '../../assets/iphone.txt'
-import windowsFile from '../../assets/windows.txt'
+import windowsFile from '../../assets/installers/codeally.exe'
 
 function Content() {
 

@@ -14,16 +14,8 @@ function Codeally(props) {
     const navigate = useNavigate()
 
     const logout = () => {
-        if(navigator.userAgent.match(/Android/i)){
-            firebase.auth().signOut()
-            navigate('/auth')
-        } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
-            firebase.auth().signOut()
-            navigate('/auth')
-        } else {
-            firebase.auth().signOut()
-            navigate('/auth')
-        }
+        firebase.auth().signOut()
+        navigate('/auth')
     }
 
     const [apps, setApps] = useState([])
