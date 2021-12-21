@@ -19,7 +19,9 @@ function Codeally(props) {
 
     const logout = () => {
         firebase.auth().signOut()
-        navigate('/auth')
+        setTimeout(() => {
+            navigate('/auth')
+        }, 500)
     }
 
     const [apps, setApps] = useState([])
