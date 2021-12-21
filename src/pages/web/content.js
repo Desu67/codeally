@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react'
 // components
 import Button from '../../components/button'
 import { Colors } from '../../components/styles'
+import Item from '../../components/item'
 // images
 import download from '../../assets/download_white_24dp.svg'
 import illustration from '../../assets/app_codeally.svg'
+import place from '../../assets/best_place.svg'
+import servers from '../../assets/connected.svg'
+import assistant from '../../assets/assistant.svg'
 // files download
 import androidFile from '../../assets/android.txt'
 import iosFile from '../../assets/iphone.txt'
@@ -16,22 +20,18 @@ function Content() {
 
     const [platform, setPlatform] = useState('')
     const [fileDownload, setFileDownload] = useState(windowsFile)
-    const [fontSize, setFontSize] = useState('18px')
 
     // eslint-disable-next-line
     useEffect(() => {
         if(navigator.userAgent.match(/Android/i)){
             setPlatform('Android')
             setFileDownload(androidFile)
-            setFontSize('18px')
         } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
             setPlatform('Iphone')
             setFileDownload(iosFile)
-            setFontSize('18px')
         } else {
             setPlatform('Windows')
             setFileDownload(windowsFile)
-            setFontSize('20px')
         }
     })
 
@@ -67,40 +67,32 @@ function Content() {
             </div>
 
             <div className='section'>
-                <div className='content' style={{ paddingTop: '30px', paddingBottom: '30px' }}>
-                    <div id='devices'>
-                        <h1 style={{ color: Colors.primary }}>
-                            A place...
-                        </h1>
-                        <p style={{ color: Colors.primary, fontSize: fontSize }}>
-                            ... where you can do whatever you want,
-                            like chat, watch videos, listen to music,
-                            play games or even much more.
-                        </p>
-                    </div>
+                <Item
+                    iconRight={place}
+                    title="A PLACE..."
+                    text="... where you can do whatever you want, 
+                    like chat, watch videos, listen to music, 
+                    play games or even much more."
+                    colorText={Colors.primary}
+                />
 
-                    <div id='devices'>
-                        <h1 style={{ color: Colors.primary }}>
-                            Servers
-                        </h1>
-                        <p style={{ color: Colors.primary, fontSize: fontSize }}>
-                            You can create a server where you can invite 
-                            all your friends and create different channels 
-                            and be able to assign a codeally application to this channel.
-                        </p>
-                    </div>
+                <Item
+                    iconLeft={servers}
+                    title="SERVERS"
+                    text="You can create a server where you can invite 
+                    all your friends and create different channels 
+                    and be able to assign a codeally application to this channel."
+                    colorText={Colors.primary}
+                />
 
-                    <div id='devices'>
-                        <h1 style={{ color: Colors.primary }}>
-                            Assistant
-                        </h1>
-                        <p style={{ color: Colors.primary, fontSize: fontSize }}>
-                            At codeally we have hanna, 
-                            an assistant you can talk to or lose anything 
-                            to him if you need to.
-                        </p>
-                    </div>
-                </div>
+                <Item
+                    iconRight={assistant}
+                    title="ASSISTANT"
+                    text="In codeally we have hanna, 
+                    an assistant with whom you can talk, 
+                    play or lose anything if you need it."
+                    colorText={Colors.primary}
+                />
             </div>
         </Parallax>
     )

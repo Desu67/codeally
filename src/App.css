@@ -85,47 +85,52 @@
   color: #ffffff;
   padding-bottom: 5px;
   font-weight: 900;
+  font-style: italic;
 }
 
 .download_section p {
   font-size: 18px;
   color: #ffffff;
   line-height: 140%;
-  font-weight: 300;
+  font-weight: 200;
   padding-bottom: 25px;
 }
 
-#devices {
+.item {
   display: flex;
-  text-align: start;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin: 3px;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-#devices img {
+.item_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.item img {
   object-fit: contain;
   width: 350px;
   padding: 20px;
 }
 
-#devices h1 {
-  font-size: 56px;
-  color: #ffffff;
-  padding: 5px;
+.item h1 {
+  font-size: 45px;
   font-weight: 900;
+  font-style: italic;
 }
 
-#devices p {
+.item p {
   font-size: 18px;
-  color: #ffffff;
   line-height: 140%;
   font-weight: 300;
-  padding-bottom: 25px;
-  margin-right: 20px;
-  margin-left: 20px;
 }
 
 .preview {
@@ -432,6 +437,18 @@ input:active {
   .auth_zone {
     width: 100% !important;
   }
+
+  .item_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .item img {
+    display: none;
+  }
 }
 
 @media (min-width: 900px){
@@ -457,6 +474,18 @@ input:active {
   .auth_zone {
     width: 50% !important;
   }
+
+  .item_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    align-items: flex-start;
+  }
+  
+  .item img {
+    display: flex;
+  }
 }
 
 @media (min-width: 1300px){
@@ -470,6 +499,19 @@ input:active {
 
   .auth_zone {
     width: 50% !important;
+  }
+
+  .item_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    align-items: flex-start;
+  }
+  
+  .item img {
+    display: flex;
+    width: 500px;
   }
 }
 
