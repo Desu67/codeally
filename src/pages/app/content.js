@@ -6,14 +6,16 @@ function Home (props) {
 
     const { user, setReloapApp } = props
     const [currentTab, setCurrentTab] = useState('Home')
+    const [startVoice, setStartVoice] = useState(false)
 
     return (
         <div className='codeally'>
             <Navigation user={user} setReloapApp={setReloapApp} currentTab={currentTab} setCurrentTab={setCurrentTab}/>
             <div className='codeally_content'>
                 <CurrentScreen currentTab={currentTab}/>
+                <button onClick={() => setStartVoice(!startVoice)}>voice</button>
             </div>
-            <Hanna setCurrentTab={setCurrentTab}/>
+            <Hanna startVoice={startVoice} setStartVoice={setStartVoice} setCurrentTab={setCurrentTab}/>
         </div>
     )
 }

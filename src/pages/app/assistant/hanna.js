@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // recognition
 import { recognition } from './recognition'
 import { useSpeechSynthesis } from './useSpeech'
@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Hanna(props) {
 
-    const { setCurrentTab } = props
+    const { setCurrentTab, startVoice, setStartVoice } = props
     const navigate = useNavigate()
 
     const { speak } = useSpeechSynthesis()
@@ -31,6 +31,14 @@ function Hanna(props) {
         }, 100)
     }
 
+    useEffect(() => {
+        if(startVoice === true){
+            recognition.start()
+        } else {
+            recognition.stop()
+        }
+    }, [startVoice])
+
     ///=> speech recognition
     recognition.onstart = () => {
         console.log('Voice recognition has started.')
@@ -42,6 +50,8 @@ function Hanna(props) {
 
     recognition.onresult = (event) => {
         const command = event.results[0][0].transcript
+
+        setStartVoice(false)
 
         if(command === 'Home.' | command === 'Go to home.'){
             setCurrentTab('Home')
