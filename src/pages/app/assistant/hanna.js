@@ -2,27 +2,19 @@ import React, { useEffect } from 'react'
 // recognition
 import { recognition } from './recognition'
 import { useSpeechSynthesis } from './useSpeech'
-import { Howl } from 'howler'
 // commands
-import { showHours, showTime } from './time/time'
+import { showTime } from './time/time'
+import { showDate } from './time/date'
 // firebase
 import firebase from '../../../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 
 function Hanna(props) {
 
-    const { setCurrentTab, startVoice, setStartVoice } = props
+    const { user, setCurrentTab, startVoice, setStartVoice } = props
     const navigate = useNavigate()
 
     const { speak } = useSpeechSynthesis()
-
-    const soundPlay = (src) => {
-        const sound = new Howl({
-            src,
-            html5: true
-        })
-        sound.play()
-    }
 
     const logout = () => {
         firebase.auth().signOut()
@@ -51,7 +43,21 @@ function Hanna(props) {
     recognition.onresult = (event) => {
         const command = event.results[0][0].transcript
 
+        console.log(command)
+
         setStartVoice(false)
+
+        if(command === 'Hola.'){
+            speak({ text: `Hola, ${user.displayName}` })
+        }
+
+        if(command === '¿Qué hora es?') {
+            speak({ text: `Son las ${showTime}` })
+        }
+
+        if(command === '¿Qué día es hoy?'){
+            speak({ text: `Hoy estamos a ${showDate}` })
+        }
 
         if(command === 'Home.' | command === 'Go to home.'){
             setCurrentTab('Home')
@@ -82,7 +88,9 @@ function Hanna(props) {
         }
     }
 
-    return null
+    return (
+        <></>
+    )
 }
 
 export default Hanna

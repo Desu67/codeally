@@ -307,6 +307,7 @@ input:active {
   align-items: center;
   border-radius: 10px;
   padding: 10px;
+  /*border: #2e343b 1px solid;*/
 }
 
 .form button {
@@ -345,7 +346,7 @@ input:active {
   text-align: start;
   align-items: center;
   justify-content: center;
-  background: #12151a;
+  background: #1a1e24;
   border-radius: 10px;
 }
 
@@ -552,6 +553,16 @@ input:active {
   text-align: center;
   transition-duration: 0.5s;
   cursor: pointer;
+}
+
+#wave {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 @media (min-width: 1300px){

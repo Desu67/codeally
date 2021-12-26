@@ -1,5 +1,3 @@
-'use strict';
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -68,7 +66,7 @@ var useSpeechSynthesis = function useSpeechSynthesis() {
             _args$rate = args.rate,
             rate = _args$rate === undefined ? 1 : _args$rate,
             _args$pitch = args.pitch,
-            pitch = _args$pitch === undefined ? 1000 : _args$pitch,
+            pitch = _args$pitch === undefined ? 100 : _args$pitch,
             _args$volume = args.volume,
             volume = _args$volume === undefined ? 1 : _args$volume;
 

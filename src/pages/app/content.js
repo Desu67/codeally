@@ -15,7 +15,7 @@ function Home (props) {
                 <CurrentScreen currentTab={currentTab}/>
                 <button onClick={() => setStartVoice(!startVoice)}>voice</button>
             </div>
-            <Hanna startVoice={startVoice} setStartVoice={setStartVoice} setCurrentTab={setCurrentTab}/>
+            <Hanna user={user} startVoice={startVoice} setStartVoice={setStartVoice} setCurrentTab={setCurrentTab}/>
         </div>
     )
 }
