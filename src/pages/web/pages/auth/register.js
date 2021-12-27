@@ -138,7 +138,7 @@ function Register (props) {
             >
 
                 {mobile ? (
-                    <motion.div initial={{ x: '-100vh' }} animate={{ x: '0' }} className="spam_zone">
+                    <div className="spam_zone">
                         <h1>
                             Create <br/>
                             account
@@ -152,12 +152,12 @@ function Register (props) {
                         <p>
                             <span onClick={() => setSelectedForm('login')}>Login</span>
                         </p>
-                    </motion.div>
+                    </div>
                 ) : (
                     null
                 )}
 
-                <motion.div initial={{ x: '100vh' }} animate={{ x: '0' }} className="auth_zone" style={{ width: widthMobile }}>
+                <div className="auth_zone" style={{ width: widthMobile }}>
 
                     <img src={brand_codeally} alt="brand_codeally"/>
                     <Input
@@ -216,7 +216,7 @@ function Register (props) {
                         Register
                     </Button>
 
-                </motion.div>
+                </div>
             </Form>
 
             {mobile ? (

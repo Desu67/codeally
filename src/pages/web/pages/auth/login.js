@@ -117,7 +117,7 @@ function Login (props) {
                 onChange={onChange}
             >
                 {mobile ? (
-                    <motion.div initial={{ x: '-100vh' }} animate={{ x: '0' }} className="spam_zone">
+                    <div className="spam_zone">
                         <h1>
                             Welcome <br/>
                             back
@@ -131,12 +131,12 @@ function Login (props) {
                         <p>
                             <span onClick={() => setSelectedForm('register')}>Let's get started!</span>
                         </p>
-                    </motion.div>
+                    </div>
                 ) : (
                     null
                 )}
 
-                <motion.div initial={{ x: '100vh' }} animate={{ x: '0' }} className="auth_zone" style={{ width: widthMobile }}>
+                <div className="auth_zone" style={{ width: widthMobile }}>
                     <img src={brand_codeally} alt="brand_codeally"/>
                     
                     <Input
@@ -175,7 +175,7 @@ function Login (props) {
                     <Button type="submit" loading={isLoading}>
                         Login
                     </Button>
-                </motion.div>
+                </div>
             </Form>
 
             {!userActive && (
