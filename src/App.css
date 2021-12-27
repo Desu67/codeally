@@ -366,7 +366,6 @@ input:checked {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /*background: chartreuse;*/
   transition-duration: 0.5s;
 }
 
