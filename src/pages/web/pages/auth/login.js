@@ -92,7 +92,6 @@ function Login (props) {
                 if(!response.user.emailVerified){
                     toast.warning("Para poder hacer login antes tienes que verificar la cuenta.")
                 }
-                navigate('/')
             })
             .catch(err => {
                 handlerErrors(err.code)
