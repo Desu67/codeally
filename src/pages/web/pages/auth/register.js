@@ -23,7 +23,7 @@ function Register (props) {
     const [showPassword, setShowPassword] = useState(false)
     const [formError, setFormError] = useState({})
     const [isLoading, setIsLoading] = useState(false)
-    const [formColor, setFormColor] = useState(Colors.primary)
+    const [formColor, setFormColor] = useState(null)
     const [mobile, setMobile] = useState(false)
     const [widthMobile, setWidthMobile] = useState('50%')
     const [widthInputMobile, setWidthInputMobile] = useState('90%')
@@ -136,7 +136,7 @@ function Register (props) {
             >
 
                 {mobile ? (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="spam_zone">
+                    <motion.div initial={{ x: '-100vh' }} animate={{ x: '0' }} className="spam_zone">
                         <h1>
                             Create <br/>
                             account
@@ -155,7 +155,7 @@ function Register (props) {
                     null
                 )}
 
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="auth_zone" style={{ width: widthMobile }}>
+                <motion.div initial={{ x: '100vh' }} animate={{ x: '0' }} className="auth_zone" style={{ width: widthMobile }}>
 
                     <img src={brand_codeally} alt="brand_codeally"/>
                     <Input

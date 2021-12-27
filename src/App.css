@@ -367,6 +367,7 @@ input:checked {
   align-items: center;
   text-align: center;
   /*background: chartreuse;*/
+  transition-duration: 0.5s;
 }
 
 .spam_zone {
@@ -379,6 +380,7 @@ input:checked {
   justify-content: center;
   background: #1a1e24;
   border-radius: 10px;
+  transition-duration: 0.5s;
 }
 
 .spam_zone h1 {
