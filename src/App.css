@@ -433,6 +433,18 @@ input:checked {
   background: #ffffff;
 }
 
+.resend-verification-email {
+  color: #ffffff;
+  background: #22272e;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.resend-verification-email span {
+  text-decoration: underline;
+}
+
 @keyframes text {
   0% {
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

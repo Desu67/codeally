@@ -124,7 +124,7 @@ function Login (props) {
                         <p>
                             New around here? <br/>
                             What are you waiting for? <br/>
-                            Sign up and start your adventure
+                            Register and start your adventure
                         </p>
 
                         <p>
@@ -232,7 +232,7 @@ function ButtonResetSendEmailVerification(props) {
     <div className="resend-verification-email">
       <p>
         If you have not received the verification email you can send it again
-        by clicking here <span onClick={resendVerificationEmail}>here.</span>
+        by clicking <span onClick={resendVerificationEmail}>here.</span>
       </p>
     </div>
   )
