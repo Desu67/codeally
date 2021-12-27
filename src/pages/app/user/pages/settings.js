@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
-// components
-import Avatar from './avatar'
+import React, { useEffect } from 'react'
 // firebase
-import firebase from '../../../utils/firebase'
+import firebase from '../../../../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 // images
-import icon_codeally from '../../../assets/icon.png'
+import icon_codeally from '../../../../assets/icon.png'
+// components
+import Avatar from '../components/avatar'
 
-function User (props) {
+function Settings(props) {
 
-    const { user, setReloapApp } = props
-
+    const { user, setReloadApp } = props
+ 
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -42,11 +42,13 @@ function User (props) {
         }, 100)
     }
 
-    return(
+    return (
         <div>
-            <Avatar user={user} setReloadApp={setReloapApp}/>
+            <h1 style={{ color: '#ffffff' }}>Settings</h1>
+            <Avatar user={user} setReloadApp={setReloadApp}/>
+            <button onClick={() => logout()}>Logout</button>
         </div>
     )
 }
 
-export default User
+export default Settings

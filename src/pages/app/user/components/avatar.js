@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { toast } from 'react-toastify'
-import NoAvatar from '../../../assets/user.svg'
+import NoAvatar from '../../../../assets/user.svg'
 // firebase
 import firebase from '../../../../utils/firebase'
 import 'firebase/storage'

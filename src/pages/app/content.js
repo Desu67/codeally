@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import Hanna from './assistant/hanna'
 import Navigation from './navigation'
-// firebase
-import firebase from '../../utils/firebase'
-import { useNavigate } from 'react-router-dom'
+import Settings from './user/pages/settings'
 
 function Home (props) {
 
@@ -11,20 +9,11 @@ function Home (props) {
     const [currentTab, setCurrentTab] = useState('Home')
     const [startVoice, setStartVoice] = useState(false)
 
-    const navigate = useNavigate()
-
-    const logout = () => {
-        firebase.auth().signOut()
-        setTimeout(() => {
-            navigate('/auth')
-        }, 100)
-    }
-
     return (
         <div className='codeally'>
             <Navigation user={user} setReloapApp={setReloapApp} currentTab={currentTab} setCurrentTab={setCurrentTab}/>
             <div className='codeally_content'>
-                <CurrentScreen currentTab={currentTab} logout={logout}/>
+                <CurrentScreen currentTab={currentTab} user={user} setReloapApp={setReloapApp}/>
                 <button onClick={() => setStartVoice(!startVoice)}>voice</button>
             </div>
             <Hanna user={user} startVoice={startVoice} setStartVoice={setStartVoice} setCurrentTab={setCurrentTab}/>
@@ -34,7 +23,7 @@ function Home (props) {
 
 export default Home
 
-const CurrentScreen = ({ currentTab, logout }) => {
+const CurrentScreen = ({ currentTab, user, setReloapApp }) => {
     if(currentTab === "Home"){
         return <h1>Home</h1>
     }
@@ -51,11 +40,6 @@ const CurrentScreen = ({ currentTab, logout }) => {
         return <h1>Books</h1>
     }
     if(currentTab === "Settings"){
-        return (
-            <>
-                <h1>Settings</h1>
-                <button onClick={() => logout()}>Logout</button>
-            </>
-        )
+        return <Settings user={user} setReloapApp={setReloapApp}/>
     }
 }
