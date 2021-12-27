@@ -1,10 +1,21 @@
 import React, { useEffect } from 'react'
 // colors
 import { Colors } from '../../../components/styles'
+import { Howl } from 'howler'
+// audio
+import signal from '../../../assets/tele.mp3'
 
 function Error (props) {
 
     const { navigate } = props
+
+    const soundPlay = (src) => {
+        const sound = new Howl({
+            src,
+            html5: true
+        })
+        sound.play()
+    }
 
     const effect = () => {
         var canvas
@@ -37,6 +48,8 @@ function Error (props) {
         pix = imgData.data
         // eslint-disable-next-line
         flickerInterval = setInterval(flickering, 30)
+
+        soundPlay(signal)
 
     }
 

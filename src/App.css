@@ -262,12 +262,41 @@
   padding: 20px;
 }
 
+input {
+  border-top-style: hidden !important;
+  border-bottom-style: hidden !important;
+  border-left-style: hidden !important;
+  border-right-style: hidden !important;
+}
+
 input:focus {
-  border-color: #2e343b !important;
+  outline: none !important;
+  border: 0px #2e343b !important;
 }
 
 input:active {
-  border-color: #2e343b !important;
+  outline: none !important;
+  border: 0px #2e343b !important;
+}
+
+input::backdrop {
+  outline: none !important;
+  border: 0px #2e343b !important;
+}
+
+input::before {
+  outline: none !important;
+  border: 0px #2e343b !important;
+}
+
+input::selection {
+  outline: none !important;
+  border: 0px #2e343b !important;
+}
+
+input:checked {
+  outline: none !important;
+  border: 0px #2e343b !important;
 }
 
 .auth_inputs {
@@ -276,6 +305,7 @@ input:active {
   width: 100%;
   justify-content: center;
   align-items: center;
+  outline: none;
 }
 
 .auth_options {
