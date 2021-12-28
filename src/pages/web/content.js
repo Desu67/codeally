@@ -6,9 +6,9 @@ import Item from '../../components/item'
 // images
 import download from '../../assets/download_white_24dp.svg'
 import illustration from '../../assets/app_codeally.svg'
-import place from '../../assets/best_place.svg'
-import servers from '../../assets/connected.svg'
-import assistant from '../../assets/assistant.svg'
+import place from '../../assets/designs/place.svg'
+import servers from '../../assets/designs/servers.svg'
+import assistant from '../../assets/designs/assistant.svg'
 // files download
 import androidFile from '../../assets/android.txt'
 import iosFile from '../../assets/iphone.txt'
@@ -18,8 +18,6 @@ import { Parallax } from 'react-parallax'
 // aos
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-
-import uwu from '../../assets/uwu.jpg'
 
 function Content() {
 

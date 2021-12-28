@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Icon, Form, Input } from 'semantic-ui-react'
 // image
 import brand_codeally from '../../../../assets/logo.svg'
-import waves from '../../../../assets/explore.svg'
+import waves from '../../../../assets/designs/bg.png'
 // firebase
 import firebase from '../../../../utils/firebase'
 import 'firebase/auth'
@@ -222,7 +222,7 @@ function Register (props) {
             {mobile ? (
                 <div id='wave'>
                     <Wave
-                        fill={Colors.primary}
+                        fill={Colors.dark}
                         paused={false}
                         options={{
                             speed: 0.3,

@@ -10,8 +10,9 @@ import 'firebase/auth'
 import { Colors } from '../../../../components/styles'
 // image
 import brand_codeally from '../../../../assets/logo.svg'
-import waves from '../../../../assets/explore.svg'
-import { useNavigate } from 'react-router'
+import waves from '../../../../assets/designs/bg.png'
+// router
+import { useNavigate } from 'react-router-dom'
 // framer motion
 import { motion } from 'framer-motion'
 import Wave from 'react-wavify'
@@ -92,6 +93,7 @@ function Login (props) {
                 if(!response.user.emailVerified){
                     toast.warning("Para poder hacer login antes tienes que verificar la cuenta.")
                 }
+                navigate('/')
             })
             .catch(err => {
                 handlerErrors(err.code)
@@ -188,7 +190,7 @@ function Login (props) {
             {mobile ? (
                 <div id='wave'>
                     <Wave
-                        fill={Colors.primary}
+                        fill={Colors.dark}
                         paused={false}
                         options={{
                             speed: 0.3,

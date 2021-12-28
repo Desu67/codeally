@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import Hanna from './assistant/hanna'
 import Navigation from './navigation'
+// pages
+import Apps from './user/pages/apps'
+import Movies from './user/pages/movies'
+import Music from './user/pages/music'
+import Games from './user/pages/games'
+import Books from './user/pages/books'
 import Settings from './user/pages/settings'
 
 function Home (props) {
@@ -13,8 +19,7 @@ function Home (props) {
         <div className='codeally'>
             <Navigation user={user} setReloapApp={setReloapApp} currentTab={currentTab} setCurrentTab={setCurrentTab}/>
             <div className='codeally_content'>
-                <CurrentScreen currentTab={currentTab} user={user} setReloapApp={setReloapApp}/>
-                <button onClick={() => setStartVoice(!startVoice)}>voice</button>
+                <CurrentScreen currentTab={currentTab} user={user} setReloapApp={setReloapApp} startVoice={startVoice} setStartVoice={setStartVoice}/>
             </div>
             <Hanna user={user} startVoice={startVoice} setStartVoice={setStartVoice} setCurrentTab={setCurrentTab}/>
         </div>
@@ -23,21 +28,21 @@ function Home (props) {
 
 export default Home
 
-const CurrentScreen = ({ currentTab, user, setReloapApp }) => {
+const CurrentScreen = ({ currentTab, user, setReloapApp, startVoice, setStartVoice }) => {
     if(currentTab === "Home"){
-        return <h1>Home</h1>
+        return <Apps user={user} startVoice={startVoice} setStartVoice={setStartVoice}/>
     }
     if(currentTab === "Movies"){
-        return <h1>Movies</h1>
+        return <Movies user={user} startVoice={startVoice} setStartVoice={setStartVoice}/>
     }
     if(currentTab === "Music"){
-        return <h1>Music</h1>
+        return <Music user={user} startVoice={startVoice} setStartVoice={setStartVoice}/>
     }
     if(currentTab === "Games"){
-        return <h1>Games</h1>
+        return <Games user={user} startVoice={startVoice} setStartVoice={setStartVoice}/>
     }
     if(currentTab === "Books"){
-        return <h1>Books</h1>
+        return <Books user={user} startVoice={startVoice} setStartVoice={setStartVoice}/>
     }
     if(currentTab === "Settings"){
         return <Settings user={user} setReloapApp={setReloapApp}/>

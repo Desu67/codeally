@@ -10,10 +10,6 @@ import arrow from '../../assets/arrow_right_white.svg'
 import { useNavigate } from 'react-router'
 // framer motion
 import { motion } from 'framer-motion'
-// images
-import twitter from '../../assets/twitter-svgrepo-com.svg'
-import discord from '../../assets/discord-v2-svgrepo-com.svg'
-import youtube from '../../assets/youtube-svgrepo-com.svg'
 
 function Navigation () {
 

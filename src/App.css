@@ -103,8 +103,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .item_content {
@@ -342,7 +340,7 @@ input:checked {
   align-items: center;
   border-radius: 10px;
   padding: 10px;
-  /*border: #2e343b 1px solid;*/
+  z-index: 2;
 }
 
 .form button {
@@ -444,6 +442,8 @@ input:checked {
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
+  z-index: 2;
+  border: #2e343b 1px solid;
 }
 
 .resend-verification-email span {
@@ -462,6 +462,26 @@ input:checked {
   }
   100% {
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media (min-height: 500px) {
+  .auth_zone {
+    min-height: 400px;
+  }
+  
+  .spam_zone {
+    min-height: 400px;
+  }
+}
+
+@media (min-height: 900px) {
+  .auth_zone {
+    min-height: 450px;
+  }
+  
+  .spam_zone {
+    min-height: 450px;
   }
 }
 
@@ -611,7 +631,7 @@ input:checked {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 1;
 }
 
 @media (min-width: 1300px){
@@ -637,7 +657,7 @@ input:checked {
   
   .item img {
     display: flex;
-    width: 600px;
+    width: 500px;
   }
 }
 

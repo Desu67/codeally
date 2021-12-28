@@ -47,6 +47,7 @@ function Settings(props) {
             <h1 style={{ color: '#ffffff' }}>Settings</h1>
             <Avatar user={user} setReloadApp={setReloadApp}/>
             <button onClick={() => logout()}>Logout</button>
+            <button onClick={() => showNoti()}>Noti</button>
         </div>
     )
 }
