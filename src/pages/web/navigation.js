@@ -6,12 +6,14 @@ import brand_codeally from '../../assets/logo.svg'
 import iconMenu from '../../assets/menu_white_24dp.svg'
 import closeMenu from '../../assets/arrow_back_white_24dp.svg'
 // icons menu
-import home from '../../assets/home_black_24dp.svg'
-import safety from '../../assets/health_and_safety_black_24dp.svg'
-import technical from '../../assets/help_black_24dp.svg'
+import arrow from '../../assets/arrow_right_white.svg'
 import { useNavigate } from 'react-router'
 // framer motion
 import { motion } from 'framer-motion'
+// images
+import twitter from '../../assets/twitter-svgrepo-com.svg'
+import discord from '../../assets/discord-v2-svgrepo-com.svg'
+import youtube from '../../assets/youtube-svgrepo-com.svg'
 
 function Navigation () {
 
@@ -19,7 +21,7 @@ function Navigation () {
 
     const [icon, setIcon] = useState(iconMenu)
     const [text, setText] = useState('')
-    const [background, setBackground] = useState(Colors.light)
+    const [background, setBackground] = useState(null)
     const [width, setWidth] = useState('145px')
     const [mobileClick, setMobileClick] = useState(false)
     // menu
@@ -80,8 +82,8 @@ function Navigation () {
             />
             {mobileClick && showMenu && (
                 <motion.div
-                    initial={{ width: offsetValue ? '0%' : '40%' }}
-                    animate={{ width: offsetValue ? '40%' : '0%' }}
+                    initial={{ width: offsetValue ? '0%' : '50%' }}
+                    animate={{ width: offsetValue ? '50%' : '0%' }}
                     className="menu" style={{ background: Colors.primary }}>
                     <Button
                         icon={closeMenu}
@@ -94,24 +96,24 @@ function Navigation () {
                         borderRadius="999px"
                     />
                     <a 
-                        style={{ display: 'flex', flexDirection: 'row', background: Colors.light, padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }} 
+                        style={{ display: 'flex', flexDirection: 'row', padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }} 
                         href="/"
                     >
-                        <img id="icon" src={home} alt="icon"/> Home
+                        Home <img id="icon" src={arrow} alt="icon"/> 
                     </a>
 
                     <a 
-                        style={{ display: 'flex', flexDirection: 'row', background: Colors.light, padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }}
+                        style={{ display: 'flex', flexDirection: 'row', padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }}
                         href="/safety"
                     >
-                        <img id="icon" src={safety} alt="icon"/> Safety
+                        Safety <img id="icon" src={arrow} alt="icon"/>
                     </a>
 
                     <a 
-                        style={{ display: 'flex', flexDirection: 'row', background: Colors.light, padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }}
+                        style={{ display: 'flex', flexDirection: 'row', padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }}
                         href="/support"
                     >
-                        <img id="icon" src={technical} alt="icon"/> Support
+                        Support <img id="icon" src={arrow} alt="icon"/>
                     </a>
                 </motion.div>
             )}

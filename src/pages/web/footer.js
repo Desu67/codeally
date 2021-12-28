@@ -17,7 +17,7 @@ function Footer() {
         } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
             setFontSize('15px')
         } else {
-            setFontSize('19px')
+            setFontSize('17px')
         }
     })
 

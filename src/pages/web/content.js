@@ -15,6 +15,11 @@ import iosFile from '../../assets/iphone.txt'
 import windowsFile from '../../assets/installers/codeally.exe'
 // parallax
 import { Parallax } from 'react-parallax'
+// aos
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
+import uwu from '../../assets/uwu.jpg'
 
 function Content() {
 
@@ -35,9 +40,13 @@ function Content() {
         }
     })
 
+    useEffect(() => {
+        Aos.init({ duration: 1000 })
+    })
+
     return (
         <Parallax
-            strength={400}
+            strength={500}
         >
             <div className="content">
                     <div className="download_section">
@@ -68,30 +77,36 @@ function Content() {
 
             <div className='section'>
                 <Item
+                    data="fade-up"
                     iconRight={place}
                     title="A PLACE..."
                     text="... where you can do whatever you want, 
                     like chat, watch videos, listen to music, 
                     play games or even much more."
                     colorText={Colors.primary}
+                    background={Colors.light}
                 />
 
                 <Item
+                    data="fade-up"
                     iconLeft={servers}
                     title="SERVERS"
                     text="You can create a server where you can invite 
                     all your friends and create different channels 
                     and be able to assign a codeally application to this channel."
                     colorText={Colors.primary}
+                    background={Colors.semiWhite}
                 />
 
                 <Item
+                    data="fade-up"
                     iconRight={assistant}
                     title="ASSISTANT"
                     text="In codeally we have hanna, 
                     an assistant with whom you can talk, 
                     play or lose anything if you need it."
                     colorText={Colors.primary}
+                    background={Colors.light}
                 />
             </div>
         </Parallax>

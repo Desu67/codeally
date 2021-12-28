@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function Item(props) {
 
-    const { iconRight, iconLeft, title, text, colorText } = props
+    const { iconRight, iconLeft, title, text, colorText, background, data } = props
     const [isMobile, setIsMobile] = useState(false)
 
     // eslint-disable-next-line
@@ -17,7 +17,7 @@ function Item(props) {
     })
 
     return (
-        <div className='item'>
+        <div data-aos={data} style={{ background: background }} className='item'>
             {!isMobile ? iconRight && (
                 <img src={iconRight} alt="icon"/>
             ) : (

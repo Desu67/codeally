@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 .navigation {
@@ -56,8 +57,8 @@
 
 .footer img {
   object-fit: cover;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   padding: 15px;
   cursor: pointer;
 }
@@ -101,9 +102,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .item_content {
@@ -113,24 +114,28 @@
   text-align: start;
   align-items: flex-start;
   width: 100%;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .item img {
   object-fit: contain;
   width: 350px;
   padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .item h1 {
   font-size: 45px;
   font-weight: 900;
-  font-style: italic;
 }
 
 .item p {
   font-size: 18px;
   line-height: 140%;
   font-weight: 300;
+  width: 90%;
 }
 
 .preview {
@@ -180,7 +185,7 @@
   top: 0;
   right: 0;
   right: 0;
-  width: 40%;
+  width: 50%;
   align-content: flex-start;
   align-items: flex-start;
   z-index: 10;
@@ -189,7 +194,7 @@
 }
 
 .menu a {
-  color: #1a1e24;
+  color: #ffffff;
   font-size: 20px;
   margin: 10px;
   text-decoration: none;
@@ -632,7 +637,7 @@ input:checked {
   
   .item img {
     display: flex;
-    width: 500px;
+    width: 600px;
   }
 }
 
