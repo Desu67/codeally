@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'CodeNext';
+  src: local('CodeNext'), url('./assets/fonts/CodeNext.ttf') format('truetype');
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -69,7 +74,7 @@
   flex-direction: row;
   width: 90%;
   justify-content: space-between;
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .download_section {
@@ -78,22 +83,21 @@
   width: 50%;
   text-align: start;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .download_section h1 {
-  font-size: 56px;
+  font-size: 65px;
   color: #ffffff;
   padding-bottom: 5px;
-  font-weight: 900;
-  font-style: italic;
+  font-family: 'CodeNext';
 }
 
 .download_section p {
   font-size: 18px;
   color: #ffffff;
   line-height: 140%;
-  font-weight: 200;
+  font-weight: 300;
   padding-bottom: 25px;
 }
 
@@ -103,6 +107,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .item_content {
@@ -118,7 +124,7 @@
 
 .item img {
   object-fit: contain;
-  width: 350px;
+  width: 500px;
   padding: 20px;
   margin-left: 50px;
   margin-right: 50px;
@@ -126,7 +132,7 @@
 
 .item h1 {
   font-size: 45px;
-  font-weight: 900;
+  font-family: 'CodeNext';
 }
 
 .item p {
@@ -144,6 +150,7 @@
 .preview img {
   object-fit: contain;
   width: 100%;
+  padding: 10px;
   border-radius: 10px;
 }
 

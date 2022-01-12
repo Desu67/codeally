@@ -5,7 +5,7 @@ import { Colors } from '../../components/styles'
 import Item from '../../components/item'
 // images
 import download from '../../assets/download_white_24dp.svg'
-import illustration from '../../assets/app_codeally.svg'
+import illustration from '../../assets/designs/devices.svg'
 import place from '../../assets/designs/place.svg'
 import servers from '../../assets/designs/servers.svg'
 import assistant from '../../assets/designs/assistant.svg'
@@ -49,10 +49,14 @@ function Content() {
             <div className="content">
                     <div className="download_section">
                         <h1>
-                            ENTER THE CODEALLY WORLD
+                            ENTER THE CODEALLY
+                            <br/>
+                            WORLD
                         </h1>
                         <p>
-                            What are you waiting for? Hang out with your friends or just enjoy all the benefits codeally by yourself on our desktop version,
+                            What are you waiting for? Hang out with your friends or just enjoy all the benefits 
+                            <br/>
+                            codeally by yourself on our desktop version,
                             <br/>
                             web or even mobile app.
                         </p>
@@ -62,8 +66,8 @@ function Content() {
                             colorText={Colors.light}
                             text={`Download for ${platform}`}
                             weight="300"
-                            width="250px"
-                            height="60px"
+                            width="300px"
+                            height="50px"
                             fileDownload={fileDownload}
                             borderRadius="999px"
                         />

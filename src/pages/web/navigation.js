@@ -72,7 +72,7 @@ function Navigation () {
                 text={text}
                 weight="normal"
                 width={width}
-                height="40px"
+                height="35px"
                 borderRadius="999px"
                 onClick={() => mobileClick ? setShowMenu(true) & setOffsetValue(true) : googleSignIn()}
             />

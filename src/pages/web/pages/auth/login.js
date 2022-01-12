@@ -194,7 +194,8 @@ function Login (props) {
                         paused={false}
                         options={{
                             speed: 0.3,
-                            points: 2
+                            points: 2,
+                            amplitude: 20
                         }}
                     />
                 </div>
