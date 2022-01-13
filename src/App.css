@@ -144,12 +144,15 @@
 
 .preview {
   display: flex;
+  flex-direction: column;
   width: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 .preview img {
   object-fit: contain;
-  width: 100%;
+  width: 80%;
   padding: 10px;
   border-radius: 10px;
 }
@@ -258,12 +261,7 @@
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
   overflow: hidden !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
 }
 
 .auth img {
@@ -341,12 +339,8 @@ input:checked {
 .form {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  text-align: center;
-  align-self: center;
-  align-items: center;
-  border-radius: 10px;
-  padding: 10px;
+  width: 100% !important;
+  min-height: 100vh;
   z-index: 2;
 }
 
@@ -372,7 +366,7 @@ input:checked {
   display: flex;
   flex-direction: column;
   width: 50%;
-  min-height: 450px;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -388,7 +382,8 @@ input:checked {
   align-items: center;
   justify-content: center;
   background: #1a1e24;
-  border-radius: 10px;
+  border-bottom-right-radius: 999px;
+  padding: 10px;
   transition-duration: 0.5s;
 }
 
@@ -415,7 +410,7 @@ input:checked {
 .ui {
   display: flex;
   flex-direction: row;
-  width: 90%;
+  width: 100%;
 }
 
 .ui input {
@@ -472,21 +467,13 @@ input:checked {
   }
 }
 
-@media (min-height: 500px) {
-  .auth_zone {
-    min-height: 400px;
-  }
-  
+@media (min-height: 500px) {  
   .spam_zone {
     min-height: 400px;
   }
 }
 
-@media (min-height: 900px) {
-  .auth_zone {
-    min-height: 450px;
-  }
-  
+@media (min-height: 900px) {  
   .spam_zone {
     min-height: 450px;
   }
@@ -503,16 +490,12 @@ input:checked {
     height: 150px;
   }
 
-  .form {
-    width: 90%;
+  .auth_zone {
+    width: 100% !important;
   }
 
   .spam_zone {
     display: none;
-  }
-
-  .auth_zone {
-    width: 100% !important;
   }
 
   .item_content {
@@ -539,17 +522,13 @@ input:checked {
     height: 200px;
   }
 
-  .form {
-    width: 90%;
+  .auth_zone {
+    width: 50% !important;
   }
 
   .spam_zone {
     display: flex;
     width: 50%;
-  }
-
-  .auth_zone {
-    width: 50% !important;
   }
 
   .item_content {
@@ -638,20 +617,12 @@ input:checked {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media (min-width: 1300px){
   .grid {
     grid-template-columns: repeat(5, 1fr);
-  }
-
-  .form {
-    width: 50%;
-  }
-
-  .auth_zone {
-    width: 50% !important;
   }
 
   .item_content {

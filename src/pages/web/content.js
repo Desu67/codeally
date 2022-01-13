@@ -39,7 +39,7 @@ function Content() {
     })
 
     useEffect(() => {
-        Aos.init({ duration: 1000 })
+        Aos.init({ duration: 2000 })
     })
 
     return (

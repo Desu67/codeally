@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Button, Icon, Form, Input } from 'semantic-ui-react'
 // image
 import brand_codeally from '../../../../assets/logo.svg'
-import waves from '../../../../assets/designs/bg.png'
 // firebase
 import firebase from '../../../../utils/firebase'
 import 'firebase/auth'
@@ -14,7 +13,6 @@ import { Colors } from '../../../../components/styles'
 import { toast } from 'react-toastify'
 // framer motion
 import { motion } from 'framer-motion'
-import Wave from 'react-wavify'
 
 function Register (props) {
 
@@ -27,7 +25,6 @@ function Register (props) {
     const [mobile, setMobile] = useState(false)
     const [widthMobile, setWidthMobile] = useState('50%')
     const [widthInputMobile, setWidthInputMobile] = useState('90%')
-    const [imageBackground, setImageBackground] = useState(null)
 
     const handlerShowPassword = () => {
         setShowPassword(!showPassword)
@@ -46,21 +43,18 @@ function Register (props) {
             setMobile(false)
             setWidthMobile('100%')
             setWidthInputMobile('100%')
-            setImageBackground(null)
         } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
             setFormColor(null)
             setMobile(false)
             setWidthMobile('100%')
             setWidthInputMobile('100%')
-            setImageBackground(null)
         } else {
             setFormColor(Colors.dark)
             setMobile(true)
             setWidthMobile('50%')
             setWidthInputMobile('100%')
-            setImageBackground(waves)
         }
-    }, [formColor, widthMobile, widthInputMobile, imageBackground])
+    }, [formColor, widthMobile, widthInputMobile])
 
     const onSubmit = () => {
         setFormError({})
@@ -128,11 +122,11 @@ function Register (props) {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             className="auth" 
-            style={{ background: `url(${imageBackground})`, overflow: 'hidden' }}
+            style={{ overflow: 'hidden' }}
         >
             <Form
                 className="form" 
-                style={{ background: formColor, border: mobile ? '#2e343b 1px solid' : 'none' }} 
+                style={{ background: formColor }}
                 onSubmit={onSubmit}
                 onChange={onChange}
             >
@@ -220,16 +214,7 @@ function Register (props) {
             </Form>
 
             {mobile ? (
-                <div id='wave'>
-                    <Wave
-                        fill={Colors.dark}
-                        paused={false}
-                        options={{
-                            speed: 0.3,
-                            points: 2
-                        }}
-                    />
-                </div>
+                null
             ) : (
                 <div className="auth_options">
                     <p>
