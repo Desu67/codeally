@@ -18,11 +18,11 @@ function Navigation(props) {
             <div className='navigation_items'>
                 <div 
                     className='item_navigation'
-                    style={{ 
-                        background: currentTab === 'Home' ? 
-                        Colors.dark
-                        : 
-                        'transparent' 
+                    style={{
+                        opacity: currentTab === 'Home' ?
+                        1
+                        :
+                        0.3
                     }}
                     onClick={() => setCurrentTab('Home')}
                 >
@@ -34,11 +34,11 @@ function Navigation(props) {
 
                 <div 
                     className='item_navigation'
-                    style={{ 
-                        background: currentTab === 'Movies' ? 
-                        Colors.dark
-                        : 
-                        'transparent' 
+                    style={{
+                        opacity: currentTab === 'Movies' ?
+                        1
+                        :
+                        0.3
                     }}
                     onClick={() => setCurrentTab('Movies')}
                 >
@@ -50,11 +50,11 @@ function Navigation(props) {
 
                 <div 
                     className='item_navigation'
-                    style={{ 
-                        background: currentTab === 'Music' ? 
-                        Colors.dark
-                        : 
-                        'transparent' 
+                    style={{
+                        opacity: currentTab === 'Music' ?
+                        1
+                        :
+                        0.3
                     }}
                     onClick={() => setCurrentTab('Music')}
                 >
@@ -66,11 +66,11 @@ function Navigation(props) {
 
                 <div 
                     className='item_navigation'
-                    style={{ 
-                        background: currentTab === 'Games' ? 
-                        Colors.dark
-                        : 
-                        'transparent' 
+                    style={{
+                        opacity: currentTab === 'Games' ?
+                        1
+                        :
+                        0.3
                     }}
                     onClick={() => setCurrentTab('Games')}
                 >
@@ -82,11 +82,11 @@ function Navigation(props) {
 
                 <div 
                     className='item_navigation'
-                    style={{ 
-                        background: currentTab === 'Books' ? 
-                        Colors.dark
-                        : 
-                        'transparent' 
+                    style={{
+                        opacity: currentTab === 'Books' ?
+                        1
+                        :
+                        0.3
                     }}
                     onClick={() => setCurrentTab('Books')}
                 >
@@ -98,11 +98,11 @@ function Navigation(props) {
 
                 <div 
                     className='item_navigation'
-                    style={{ 
-                        background: currentTab === 'Settings' ? 
-                        Colors.dark
-                        : 
-                        'transparent' 
+                    style={{
+                        opacity: currentTab === 'Settings' ?
+                        1
+                        :
+                        0.3
                     }}
                     onClick={() => setCurrentTab('Settings')}
                 >

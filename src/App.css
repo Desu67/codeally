@@ -452,6 +452,12 @@ input:checked {
   text-decoration: underline;
 }
 
+.games {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
 @keyframes text {
   0% {
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -482,6 +488,10 @@ input:checked {
 @media (min-width: 500px){
   .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .games_content {
+    grid-template-columns: auto auto !important;
   }
 
   .app_icon {
@@ -520,6 +530,10 @@ input:checked {
     display: flex;
     width: 200px;
     height: 200px;
+  }
+
+  .games_content {
+    grid-template-columns: auto auto auto !important;
   }
 
   .auth_zone {
@@ -577,7 +591,6 @@ input:checked {
   flex-direction: column;
   align-items: center;
   width: 90px;
-  background: #1a1e24;
 }
 
 .navigation_user img {
@@ -610,6 +623,78 @@ input:checked {
   cursor: pointer;
 }
 
+.game_item {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 15px;
+  object-fit: cover;
+  align-items: center;
+  justify-content: space-between;
+  border: transparent 1px solid;
+  transition-duration: 0.5s;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.game_item h1 {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: 'CodeNext';
+  opacity: 0;
+}
+
+.game_item:hover {
+  border: #676872 1px solid;
+}
+
+.button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 45px;
+  border-radius: 10px;
+  background: rgb(29, 29, 31);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.games_content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+}
+
+.games input {
+  width: 90%;
+  height: 45px;
+  margin: 15px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #2e343b;
+  padding: 5px 15px 5px 15px;
+  color: #ffffff;
+  -webkit-text-fill-color: #676872 !important;
+  font-size: 15px;
+  font-weight: 200;
+}
+
 #wave {
   display: flex;
   position: fixed;
@@ -623,6 +708,10 @@ input:checked {
 @media (min-width: 1300px){
   .grid {
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .games_content {
+    grid-template-columns: auto auto auto auto !important;
   }
 
   .item_content {
