@@ -36,7 +36,6 @@ function Settings(props) {
     }
 
     const logout = () => {
-        navigate('/auth')
         firebase.auth().signOut()
         setTimeout(() => {
             navigate('/auth')

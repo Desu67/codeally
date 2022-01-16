@@ -438,6 +438,25 @@ input:checked {
   margin: 10px;
 }
 
+.loading {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loading img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
 @keyframes text {
   0% {
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

@@ -15,6 +15,8 @@ import iosFile from '../../assets/iphone.txt'
 import windowsFile from '../../assets/installers/codeally.exe'
 // parallax
 import { Parallax } from 'react-parallax'
+// image
+import codeally from '../../assets/designs/loading.svg'
 // aos
 import Aos from 'aos'
 import 'aos/dist/aos.css'
@@ -23,6 +25,8 @@ function Content() {
 
     const [platform, setPlatform] = useState('')
     const [fileDownload, setFileDownload] = useState(windowsFile)
+    // loading
+    const [ loading, setLoading ] = useState(true)
 
     // eslint-disable-next-line
     useEffect(() => {
@@ -42,10 +46,28 @@ function Content() {
         Aos.init({ duration: 2000 })
     })
 
+    useEffect(() => {
+        if(loading){
+            setTimeout(() => {
+                setLoading(false)
+            }, 2000)
+        }
+    }, [loading])
+
     return (
         <Parallax
             strength={500}
         >
+            {loading ? (
+                <div className='loading' style={{ background: Colors.dark }}>
+                    <img src={codeally} alt='codeally'/>
+                </div>
+            )
+            : (
+                null
+            )
+            }
+
             <div className="content">
                     <div className="download_section">
                         <h1>
