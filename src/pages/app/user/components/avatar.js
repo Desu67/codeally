@@ -21,7 +21,7 @@ function Avatar(props) {
     })
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
-        accept: "image/jpeg, image/png",
+        accept: "image/jpeg, image/png, image/gif",
         noKeyboard: true,
         onDrop
     })
