@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 // semantic ui
 import { Button, Icon, Form, Input } from 'semantic-ui-react'
-// image
-import brand_codeally from '../../../../assets/logo.svg'
 // firebase
 import firebase from '../../../../utils/firebase'
 import 'firebase/auth'
@@ -132,28 +130,29 @@ function Register (props) {
             >
 
                 {mobile ? (
-                    <div className="spam_zone">
-                        <h1>
-                            Create <br/>
-                            account
-                        </h1>
-                        <p>
-                            Already have an account? <br/>
-                            You know what you have to do then... <br/>
-                            !Let's click here below!
-                        </p>
+                    <>
+                        <div
+                            className='circleone'
+                            style={{ 
+                                backgroundImage: `url(${'https://images.hdqwalls.com/download/auroral-forest-4k-illustration-h0-1920x1080.jpg'})` 
+                            }}
+                        />
 
-                        <p>
-                            <span onClick={() => setSelectedForm('login')}>Login</span>
-                        </p>
-                    </div>
+                        <div
+                            className='circletwo'
+                            style={{ 
+                                backgroundImage: `url(${'https://images.hdqwalls.com/download/auroral-forest-4k-illustration-h0-1920x1080.jpg'})` 
+                            }}
+                        />
+                    </>
                 ) : (
                     null
                 )}
 
                 <div className="auth_zone" style={{ width: widthMobile }}>
 
-                    <img src={brand_codeally} alt="brand_codeally"/>
+                    <h1>Register</h1>
+
                     <Input
                         className="auth_inputs"
                         type="text"
@@ -210,19 +209,15 @@ function Register (props) {
                         Register
                     </Button>
 
+                    <div className="auth_options">
+                        <p>
+                            Already have an account?
+                            <span onClick={() => setSelectedForm('login')}>Login</span>
+                        </p>
+                    </div>
+
                 </div>
             </Form>
-
-            {mobile ? (
-                null
-            ) : (
-                <div className="auth_options">
-                    <p>
-                        Already have an account?
-                        <span onClick={() => setSelectedForm('login')}>Login</span>
-                    </p>
-                </div>
-            )}
         </motion.div>
     )
 }

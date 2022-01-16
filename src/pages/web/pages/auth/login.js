@@ -8,8 +8,6 @@ import firebase from '../../../../utils/firebase'
 import 'firebase/auth'
 // colors
 import { Colors } from '../../../../components/styles'
-// image
-import brand_codeally from '../../../../assets/logo.svg'
 // router
 import { useNavigate } from 'react-router-dom'
 // framer motion
@@ -112,27 +110,27 @@ function Login (props) {
                 onChange={onChange}
             >
                 {mobile ? (
-                    <div className="spam_zone">
-                        <h1>
-                            Welcome <br/>
-                            back
-                        </h1>
-                        <p>
-                            New around here? <br/>
-                            What are you waiting for? <br/>
-                            Register and start your adventure
-                        </p>
+                    <>
+                        <div
+                            className='circleone'
+                            style={{ 
+                                backgroundImage: `url(${'https://images.hdqwalls.com/download/auroral-forest-4k-illustration-h0-1920x1080.jpg'})` 
+                            }}
+                        />
 
-                        <p>
-                            <span onClick={() => setSelectedForm('register')}>Let's get started!</span>
-                        </p>
-                    </div>
+                        <div
+                            className='circletwo'
+                            style={{ 
+                                backgroundImage: `url(${'https://images.hdqwalls.com/download/auroral-forest-4k-illustration-h0-1920x1080.jpg'})` 
+                            }}
+                        />
+                    </>
                 ) : (
                     null
                 )}
 
                 <div className="auth_zone" style={{ width: widthMobile }}>
-                    <img src={brand_codeally} alt="brand_codeally"/>
+                    <h1>Sign in</h1>
                     
                     <Input
                         style={{ width: widthInputMobile  }}
@@ -170,6 +168,14 @@ function Login (props) {
                     <Button type="submit" loading={isLoading}>
                         Login
                     </Button>
+
+                    <div className="auth_options">
+                        <p>
+                            Need an account?
+                            <span onClick={() => setSelectedForm('register')}>Register</span>
+                        </p>
+                    </div>
+
                 </div>
             </Form>
 
@@ -179,17 +185,6 @@ function Login (props) {
                     setIsLoading={setIsLoading}
                     setUserActive={setUserActive}
                 />
-            )}
-
-            {mobile ? (
-                null
-            ) : (
-                <div className="auth_options">
-                    <p>
-                        Need an account?
-                        <span onClick={() => setSelectedForm('register')}>Register</span>
-                    </p>
-                </div>
             )}
         </motion.div>
     )

@@ -264,10 +264,10 @@
   overflow: hidden !important;
 }
 
-.auth img {
-  object-fit: cover;
-  width: 180px;
-  padding: 20px;
+.auth h1 {
+  color: #ffffff;
+  font-family: 'CodeNext';
+  font-size: 40px;
 }
 
 input {
@@ -307,15 +307,6 @@ input:checked {
   border: 0px #2e343b !important;
 }
 
-.auth_inputs {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-}
-
 .auth_options {
   margin-top: 50px;
   color: #ffffff;
@@ -330,17 +321,13 @@ input:checked {
   cursor: pointer;
 }
 
-.spam_zone span {
-  text-decoration: underline;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
 .form {
   display: flex;
   flex-direction: row;
   width: 100% !important;
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
 }
 
@@ -352,54 +339,62 @@ input:checked {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 200px;
   height: 50px;
   margin-top: 25px;
   font-size: 17px;
   padding: 5px;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 25px;
+  color: #1a1e24;
   cursor: pointer;
 }
 
 .auth_zone {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  min-height: 100vh;
+  width: 100%;
   justify-content: center;
   align-items: center;
   text-align: center;
   transition-duration: 0.5s;
+  z-index: 2;
 }
 
-.spam_zone {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  min-height: 450px;
-  text-align: start;
-  align-items: center;
-  justify-content: center;
+.auth_zone input {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
   background: #1a1e24;
-  border-bottom-right-radius: 999px;
-  padding: 10px;
-  transition-duration: 0.5s;
-}
-
-.spam_zone h1 {
-  color: #ffffff;
-  font-size: 60px;
-  width: 90%;
-  margin: 5px;
-  font-weight: 900;
-}
-
-.spam_zone p {
-  color: #ffffff;
-  width: 90%;
-  margin: 15px;
+  border: #2e343b 1px solid;
+  margin: 10px 50px 10px 50px;
+  padding: 5px 20px 5px 20px;
+  -webkit-text-stroke-color: #676872;
+  color: #ffffff !important;
   font-weight: 300;
+  font-size: 14px;
+}
+
+.circleone {
+  display: flex;
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  top: -100px;
+  left: -100px;
+  border-radius: 99999px;
+  z-index: 1;
+}
+
+.circletwo {
+  display: flex;
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  border-radius: 99999px;
+  z-index: 1;
 }
 
 .error {
@@ -409,22 +404,7 @@ input:checked {
 
 .ui {
   display: flex;
-  flex-direction: row;
   width: 100%;
-}
-
-.ui input {
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-  background: #1a1e24;
-  border: #2e343b 1px solid;
-  margin: 15px;
-  padding: 5px 20px 5px 20px;
-  -webkit-text-stroke-color: #676872;
-  color: #ffffff !important;
-  font-weight: 300;
-  font-size: 14px;
 }
 
 .section {
@@ -473,18 +453,6 @@ input:checked {
   }
 }
 
-@media (min-height: 500px) {  
-  .spam_zone {
-    min-height: 400px;
-  }
-}
-
-@media (min-height: 900px) {  
-  .spam_zone {
-    min-height: 450px;
-  }
-}
-
 @media (min-width: 500px){
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -498,14 +466,6 @@ input:checked {
     display: flex;
     width: 150px;
     height: 150px;
-  }
-
-  .auth_zone {
-    width: 100% !important;
-  }
-
-  .spam_zone {
-    display: none;
   }
 
   .item_content {
@@ -534,15 +494,6 @@ input:checked {
 
   .games_content {
     grid-template-columns: auto auto auto !important;
-  }
-
-  .auth_zone {
-    width: 50% !important;
-  }
-
-  .spam_zone {
-    display: flex;
-    width: 50%;
   }
 
   .item_content {
