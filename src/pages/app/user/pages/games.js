@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // components
 import GameItem from '../components/gameitem'
 // json
@@ -9,6 +9,8 @@ function Games(props) {
     const { user, startVoice, setStartVoice } = props
     // search
     const [search, setSearch] = useState('')
+    // modal game
+    const [open, setOpen]  = useState(false)
 
     return (
         <div className='games'>
@@ -26,7 +28,15 @@ function Games(props) {
                         return val
                     }
                 }).map((val, key) => {
-                    return <GameItem key={key} img={val.img} title={val.title}/>
+                    return <GameItem
+                        key={key}
+                        img={val.img}
+                        title={val.title}
+                        url={val.url}
+                        onClick={() => setOpen(true)}
+                        open={open}
+                        setOpen={setOpen}
+                    />
                 })}
             </div>
         </div>
