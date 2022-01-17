@@ -1,6 +1,6 @@
 import React from 'react'
 // icons
-import apps from '../../assets/apps_white_24dp.svg'
+import apps from '../../assets/icons/chat.svg'
 import movies from '../../assets/movie_white_24dp.svg'
 import music from '../../assets/headset_white_24dp.svg'
 import games from '../../assets/sports_esports_white_24dp.svg'
@@ -16,7 +16,7 @@ function Navigation(props) {
         <div className='navigation_user'>
             <img src={user.photoURL} alt='avatar'/>
             <div className='navigation_items'>
-                <div 
+                <div
                     className='item_navigation'
                     style={{
                         opacity: currentTab === 'Home' ?
