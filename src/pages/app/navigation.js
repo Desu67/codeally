@@ -6,6 +6,7 @@ import music from '../../assets/headset_white_24dp.svg'
 import games from '../../assets/sports_esports_white_24dp.svg'
 import books from '../../assets/auto_stories_white_24dp.svg'
 import settings from '../../assets/settings_white_24dp.svg'
+import edit from '../../assets/icons/edit.svg'
 import { Colors } from '../../components/styles'
 
 function Navigation(props) {
@@ -14,8 +15,21 @@ function Navigation(props) {
 
     return (
         <div className='navigation_user'>
-            <img src={user.photoURL} alt='avatar'/>
-            <div className='navigation_items'>
+            <div className='profile'>
+                <img src={user.photoURL} alt='avatar'/>
+                <h1>{user.displayName}</h1>
+
+                <img
+                    id='edit'
+                    src={edit} 
+                    alt='edit' 
+                    onClick={() => setCurrentTab('Settings')}
+                />
+            </div>
+
+            <input placeholder='Search'/>
+            
+            <div className='users'>
                 <div
                     className='item_navigation'
                     style={{
@@ -95,22 +109,7 @@ function Navigation(props) {
                         alt='books' 
                     />
                 </div>
-
-                <div 
-                    className='item_navigation'
-                    style={{
-                        opacity: currentTab === 'Settings' ?
-                        1
-                        :
-                        0.3
-                    }}
-                    onClick={() => setCurrentTab('Settings')}
-                >
-                    <img
-                        src={settings} 
-                        alt='settings' 
-                    />
-                </div>
+                
             </div>
         </div>
     )

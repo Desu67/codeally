@@ -16,6 +16,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #272d35;
+  border-radius: 999px !important;
 }
 
 .Toastify > .Toastify__toast-container--bottom-center{

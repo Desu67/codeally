@@ -589,7 +589,7 @@ input:checked {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90px;
+  width: 400px;
   min-height: 100vh;
   background: #1a1e24;
 }
@@ -603,15 +603,16 @@ input:checked {
 .users {
   display: flex;
   flex-direction: column;
-  width: 240px;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
   align-items: center;
   text-align: center;
+  overflow-y: scroll !important;
 }
 
-.users input {
+.navigation_user input {
   width: 80%;
-  height: 25px;
+  height: 30px;
   margin: 15px;
   outline: none;
   border: none;
@@ -624,12 +625,36 @@ input:checked {
   font-weight: 200;
 }
 
-.navigation_user img {
+.profile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.profile img {
   object-fit: cover;
   width: 50px;
   height: 50px;
   border-radius: 999px;
   padding: 30px;
+}
+
+.profile h1 {
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+#edit {
+  object-fit: contain !important;
+  border-radius: 0px !important;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .navigation_items {
@@ -653,6 +678,9 @@ input:checked {
   text-align: center;
   transition-duration: 0.5s;
   cursor: pointer;
+  padding: 100px 0px 100px 0px !important;
+  margin: 5px 0px 5px 0px !important;
+  background: #676872;
 }
 
 .game_item {
