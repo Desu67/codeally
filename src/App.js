@@ -38,6 +38,7 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <h1>hello</h1>
         {user ? (
           <Codeally user={user} setReloapApp={setReloapApp} />
         ) : (
