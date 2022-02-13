@@ -26,14 +26,14 @@ function Content() {
     const [platform, setPlatform] = useState('')
     const [fileDownload, setFileDownload] = useState(windowsFile)
     // loading
-    const [ loading, setLoading ] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     // eslint-disable-next-line
     useEffect(() => {
-        if(navigator.userAgent.match(/Android/i)){
+        if (navigator.userAgent.match(/Android/i)) {
             setPlatform('Android')
             setFileDownload(androidFile)
-        } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
             setPlatform('Iphone')
             setFileDownload(iosFile)
         } else {
@@ -47,7 +47,7 @@ function Content() {
     })
 
     useEffect(() => {
-        if(loading){
+        if (loading) {
             setTimeout(() => {
                 setLoading(false)
             }, 2000)
@@ -60,42 +60,42 @@ function Content() {
         >
             {loading ? (
                 <div className='loading' style={{ background: Colors.dark }}>
-                    <img src={codeally} alt='codeally'/>
+                    <img src={codeally} alt='codeally' />
                 </div>
             )
-            : (
-                null
-            )
+                : (
+                    null
+                )
             }
 
             <div className="content">
-                    <div className="download_section">
-                        <h1>
-                            ENTER THE CODEALLY
-                            <br/>
-                            WORLD
-                        </h1>
-                        <p>
-                            What are you waiting for? Hang out with your friends or just enjoy all the benefits 
-                            <br/>
-                            codeally by yourself on our desktop version,
-                            <br/>
-                            web or even mobile app.
-                        </p>
-                        <Button
-                            icon={download}
-                            color={Colors.primary}
-                            colorText={Colors.light}
-                            text={`Download for ${platform}`}
-                            weight="300"
-                            width="300px"
-                            height="50px"
-                            fileDownload={fileDownload}
-                            borderRadius="999px"
-                        />
-                    </div>
+                <div className="download_section">
+                    <h1>
+                        ENTER THE CODEALLY
+                        <br />
+                        WORLD
+                    </h1>
+                    <p>
+                        What are you waiting for? Hang out with your friends or just enjoy all the benefits
+                        <br />
+                        codeally by yourself on our desktop version,
+                        <br />
+                        web or even mobile app.
+                    </p>
+                    <Button
+                        icon={download}
+                        color={Colors.primary}
+                        colorText={Colors.light}
+                        text={`Download for ${platform}`}
+                        weight="300"
+                        width="300px"
+                        height="50px"
+                        fileDownload={fileDownload}
+                        borderRadius="999px"
+                    />
+                </div>
                 <div className="preview">
-                    <img src={illustration} alt="preview_codeally"/>
+                    <img src={illustration} alt="preview_codeally" />
                 </div>
             </div>
 

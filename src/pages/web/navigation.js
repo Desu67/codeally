@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router'
 // framer motion
 import { motion } from 'framer-motion'
 
-function Navigation () {
+function Navigation() {
 
     const navigate = useNavigate()
 
@@ -39,14 +39,14 @@ function Navigation () {
     }
 
     useEffect(() => {
-        if(navigator.userAgent.match(/Android/i)){
+        if (navigator.userAgent.match(/Android/i)) {
             setIcon(iconMenu)
             setText(null)
             setBackground(null)
             setWidth('24px')
             setMobileClick(true)
             setMargin('5px')
-        } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
             setIcon(iconMenu)
             setText(null)
             setBackground(null)
@@ -62,9 +62,10 @@ function Navigation () {
         }
     }, [])
 
-    return(
+    return (
         <div className="navigation">
-            <img style={{ cursor: 'pointer' }} src={brand_codeally} alt="brand_codeally" onClick={() => navigate('/')}/>
+            <img style={{ cursor: 'pointer', width: '150px', objectFit: 'contain' }} src={brand_codeally} alt="brand_codeally" onClick={() => navigate('/')} />
+
             <Button
                 icon={icon}
                 color={background}
@@ -76,6 +77,7 @@ function Navigation () {
                 borderRadius="999px"
                 onClick={() => mobileClick ? setShowMenu(true) & setOffsetValue(true) : googleSignIn()}
             />
+
             {mobileClick && showMenu && (
                 <motion.div
                     initial={{ width: offsetValue ? '0%' : '50%' }}
@@ -91,25 +93,25 @@ function Navigation () {
                         margin={margin}
                         borderRadius="999px"
                     />
-                    <a 
-                        style={{ display: 'flex', flexDirection: 'row', padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }} 
+                    <a
+                        style={{ display: 'flex', flexDirection: 'row', padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }}
                         href="/"
                     >
-                        Home <img id="icon" src={arrow} alt="icon"/> 
+                        Home <img id="icon" src={arrow} alt="icon" />
                     </a>
 
-                    <a 
+                    <a
                         style={{ display: 'flex', flexDirection: 'row', padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }}
                         href="/safety"
                     >
-                        Safety <img id="icon" src={arrow} alt="icon"/>
+                        Safety <img id="icon" src={arrow} alt="icon" />
                     </a>
 
-                    <a 
+                    <a
                         style={{ display: 'flex', flexDirection: 'row', padding: '10px', borderRadius: '10px', minWidth: '100px', height: '25px', justifyContent: 'flex-start', textAlign: 'start', alignItems: 'center' }}
                         href="/support"
                     >
-                        Support <img id="icon" src={arrow} alt="icon"/>
+                        Support <img id="icon" src={arrow} alt="icon" />
                     </a>
                 </motion.div>
             )}

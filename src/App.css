@@ -23,12 +23,6 @@
   padding-top: 10px;
 }
 
-.navigation img {
-  object-fit: cover;
-  width: 150px;
-  padding: 5px;
-}
-
 #button {
   transition-duration: 0.5s;
 }
@@ -363,10 +357,10 @@ input:checked {
 
 .auth_zone input {
   width: 100%;
-  height: 50px;
+  height: 45px;
   border-radius: 10px;
   background: #1a1e24;
-  border: #2e343b 1px solid;
+  border: #2e343b 1px solid !important;
   margin: 10px 50px 10px 50px;
   padding: 5px 20px 5px 20px;
   -webkit-text-stroke-color: #676872;
@@ -378,8 +372,8 @@ input:checked {
 .circleone {
   display: flex;
   position: fixed;
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
   top: -100px;
   left: -100px;
   border-radius: 99999px;
@@ -436,6 +430,21 @@ input:checked {
   display: flex;
   flex-direction: column;
   margin: 10px;
+}
+
+.loading_chat {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loading_chat img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
 }
 
 .loading {
@@ -527,6 +536,14 @@ input:checked {
   .item img {
     display: none;
   }
+
+  .circleone {
+    display: none;
+  }
+  
+  .circletwo {
+    display: none;
+  }
 }
 
 @media (min-width: 900px){
@@ -553,6 +570,14 @@ input:checked {
   }
   
   .item img {
+    display: flex;
+  }
+
+  .circleone {
+    display: flex;
+  }
+  
+  .circletwo {
     display: flex;
   }
 }
@@ -589,15 +614,17 @@ input:checked {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 300px;
   min-height: 100vh;
   background: #1a1e24;
+  overflow: hidden !important;
 }
 
 .chat {
   display: flex;
   flex-direction: row;
   width: 100%;
+  overflow: hidden !important;
 }
 
 .users {
@@ -607,7 +634,7 @@ input:checked {
   height: 100%;
   align-items: center;
   text-align: center;
-  overflow-y: scroll !important;
+  overflow: hidden !important;
 }
 
 .navigation_user input {
@@ -633,19 +660,20 @@ input:checked {
   align-items: center;
   text-align: center;
   justify-content: space-between;
+  overflow: hidden !important;
 }
 
 .profile img {
   object-fit: cover;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 999px;
   padding: 30px;
 }
 
 .profile h1 {
   color: #ffffff;
-  font-size: 21px;
+  font-size: 17px;
   font-weight: 400;
 }
 
@@ -660,6 +688,7 @@ input:checked {
 .navigation_items {
   display: flex;
   flex-direction: column;
+  overflow: hidden !important;
 }
 
 .navigation_items img {
@@ -671,16 +700,24 @@ input:checked {
 
 .item_navigation {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  text-align: center;
+  text-align: start !important;
   transition-duration: 0.5s;
   cursor: pointer;
-  padding: 100px 0px 100px 0px !important;
-  margin: 5px 0px 5px 0px !important;
-  background: #676872;
+  padding: 5px 5px 5px 35px;
+  overflow: hidden !important;
+}
+
+.item_navigation h1 {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: start;
 }
 
 .game_item {
@@ -785,6 +822,14 @@ input:checked {
   .item img {
     display: flex;
     width: 500px;
+  }
+
+  .circleone {
+    display: flex;
+  }
+  
+  .circletwo {
+    display: flex;
   }
 }
 

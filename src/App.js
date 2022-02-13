@@ -22,7 +22,7 @@ function App() {
   const [reloadApp, setReloapApp] = useState(false)
 
   firebase.auth().onAuthStateChanged(currentUser => {
-    if(!currentUser?.emailVerified) {
+    if (!currentUser?.emailVerified) {
       firebase.auth().signOut()
       setUser(null)
     } else {
@@ -31,7 +31,7 @@ function App() {
     setIsLoading(false)
   })
 
-  if(isLoading) {
+  if (isLoading) {
     return null
   }
 
@@ -39,9 +39,9 @@ function App() {
     <Router>
       <div className="app">
         {user ? (
-          <Codeally user={user} setReloapApp={setReloapApp}/>
+          <Codeally user={user} setReloapApp={setReloapApp} />
         ) : (
-          <Web user={user}/>
+          <Web user={user} />
         )}
         <ToastContainer
           position="bottom-center"

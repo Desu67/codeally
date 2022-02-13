@@ -12,7 +12,9 @@ import { toast } from 'react-toastify'
 // framer motion
 import { motion } from 'framer-motion'
 
-function Register (props) {
+import url from '../../../../assets/designs/auth.jpg'
+
+function Register(props) {
 
     const { setSelectedForm } = props
     const [formData, setFormData] = useState(initialValueForm())
@@ -36,12 +38,12 @@ function Register (props) {
     }
 
     useEffect(() => {
-        if(navigator.userAgent.match(/Android/i)){
+        if (navigator.userAgent.match(/Android/i)) {
             setFormColor(null)
             setMobile(false)
             setWidthMobile('100%')
             setWidthInputMobile('100%')
-        } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
             setFormColor(null)
             setMobile(false)
             setWidthMobile('100%')
@@ -60,70 +62,70 @@ function Register (props) {
         let formOk = true
 
         if (!validateEmail(formData.email)) {
-        errors.email = true
-        formOk = false
+            errors.email = true
+            formOk = false
         }
         if (formData.password.length < 6) {
-        errors.password = true
-        formOk = false
+            errors.password = true
+            formOk = false
         }
         if (!formData.username) {
-        errors.username = true
-        formOk = false
+            errors.username = true
+            formOk = false
         }
         setFormError(errors)
 
         if (formOk) {
-        setIsLoading(true)
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(formData.email, formData.password)
-            .then(() => {
-            changeUserName()
-            sendVerificationEmail()
-            })
-            .catch(() => {
-            toast.error("Error al crear la cuenta.")
-            })
-            .finally(() => {
-            setIsLoading(false)
-            setSelectedForm(null)
-            })
+            setIsLoading(true)
+            firebase
+                .auth()
+                .createUserWithEmailAndPassword(formData.email, formData.password)
+                .then(() => {
+                    changeUserName()
+                    sendVerificationEmail()
+                })
+                .catch(() => {
+                    toast.error("Error al crear la cuenta.")
+                })
+                .finally(() => {
+                    setIsLoading(false)
+                    setSelectedForm(null)
+                })
         }
     }
 
     const changeUserName = () => {
         firebase
-        .auth()
-        .currentUser.updateProfile({
-            displayName: formData.username
-        })
-        .catch(() => {
-            toast.error("Error al asignar el nombre de usuario.")
-        })
+            .auth()
+            .currentUser.updateProfile({
+                displayName: formData.username
+            })
+            .catch(() => {
+                toast.error("Error al asignar el nombre de usuario.")
+            })
     }
 
     const sendVerificationEmail = () => {
         firebase
-        .auth()
-        .currentUser.sendEmailVerification()
-        .then(() => {
-            toast.success('Se ha enviado un email de verificacion.')
-        })
-        .catch(() => {
-            toast.error('Error al enviar el email de verificacion.')
-        })
+            .auth()
+            .currentUser.sendEmailVerification()
+            .then(() => {
+                toast.success('Se ha enviado un email de verificacion.')
+            })
+            .catch(() => {
+                toast.error('Error al enviar el email de verificacion.')
+            })
     }
 
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="auth" 
+            className="auth"
             style={{ overflow: 'hidden' }}
         >
             <Form
-                className="form" 
+                className="form"
                 style={{ background: formColor }}
                 onSubmit={onSubmit}
                 onChange={onChange}
@@ -133,15 +135,15 @@ function Register (props) {
                     <>
                         <div
                             className='circleone'
-                            style={{ 
-                                backgroundImage: `url(${'https://images.hdqwalls.com/download/auroral-forest-4k-illustration-h0-1920x1080.jpg'})` 
+                            style={{
+                                backgroundImage: `url(${url})`
                             }}
                         />
 
                         <div
                             className='circletwo'
-                            style={{ 
-                                backgroundImage: `url(${'https://images.hdqwalls.com/download/auroral-forest-4k-illustration-h0-1920x1080.jpg'})` 
+                            style={{
+                                backgroundImage: `url(${url})`
                             }}
                         />
                     </>
@@ -174,15 +176,15 @@ function Register (props) {
                         placeholder="Password"
                         error={formError.password}
                         icon={
-                        showPassword ? (
-                            <Icon
-                            name="eye slash outline"
-                            link
-                            onClick={handlerShowPassword}
-                            />
-                        ) : (
-                            <Icon name="eye" link onClick={handlerShowPassword} />
-                        )
+                            showPassword ? (
+                                <Icon
+                                    name="eye slash outline"
+                                    link
+                                    onClick={handlerShowPassword}
+                                />
+                            ) : (
+                                <Icon name="eye" link onClick={handlerShowPassword} />
+                            )
                         }
                     />
                     {formError.password && (

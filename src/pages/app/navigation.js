@@ -16,100 +16,105 @@ function Navigation(props) {
     return (
         <div className='navigation_user'>
             <div className='profile'>
-                <img src={user.photoURL} alt='avatar'/>
+                <img src={user.photoURL} alt='avatar' />
                 <h1>{user.displayName}</h1>
 
                 <img
                     id='edit'
-                    src={edit} 
-                    alt='edit' 
+                    src={edit}
+                    alt='edit'
                     onClick={() => setCurrentTab('Settings')}
                 />
             </div>
 
-            <input placeholder='Search'/>
-            
+            <input placeholder='Search' />
+
             <div className='users'>
                 <div
                     className='item_navigation'
                     style={{
                         opacity: currentTab === 'Home' ?
-                        1
-                        :
-                        0.3
+                            1
+                            :
+                            0.3
                     }}
                     onClick={() => setCurrentTab('Home')}
                 >
                     <img
-                        src={apps} 
-                        alt='apps' 
+                        src={apps}
+                        alt='apps'
                     />
+                    <h1>Mizucord</h1>
                 </div>
 
-                <div 
+                <div
                     className='item_navigation'
                     style={{
                         opacity: currentTab === 'Movies' ?
-                        1
-                        :
-                        0.3
+                            1
+                            :
+                            0.3
                     }}
                     onClick={() => setCurrentTab('Movies')}
                 >
                     <img
-                        src={movies} 
-                        alt='movies' 
+                        src={movies}
+                        alt='movies'
                     />
+                    <h1>Movies</h1>
                 </div>
 
-                <div 
+                <div
                     className='item_navigation'
                     style={{
                         opacity: currentTab === 'Music' ?
-                        1
-                        :
-                        0.3
+                            1
+                            :
+                            0.3
                     }}
                     onClick={() => setCurrentTab('Music')}
                 >
                     <img
-                        src={music} 
-                        alt='music' 
+                        src={music}
+                        alt='music'
                     />
+                    <h1>Music</h1>
                 </div>
 
-                <div 
+                <div
                     className='item_navigation'
                     style={{
                         opacity: currentTab === 'Games' ?
-                        1
-                        :
-                        0.3
+                            1
+                            :
+                            0.3
                     }}
                     onClick={() => setCurrentTab('Games')}
                 >
                     <img
-                        src={games} 
-                        alt='games' 
+                        src={games}
+                        alt='games'
                     />
+                    <h1>Games</h1>
                 </div>
 
-                <div 
+                <div
                     className='item_navigation'
                     style={{
                         opacity: currentTab === 'Books' ?
-                        1
-                        :
-                        0.3
+                            1
+                            :
+                            0.3
                     }}
                     onClick={() => setCurrentTab('Books')}
                 >
                     <img
-                        src={books} 
-                        alt='books' 
+                        src={books}
+                        alt='books'
                     />
+                    <h1>Books</h1>
                 </div>
-                
+
             </div>
         </div>
     )

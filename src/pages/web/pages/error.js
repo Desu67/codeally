@@ -4,7 +4,7 @@ import { Colors } from '../../../components/styles'
 // image
 import codeally from '../../../assets/designs/loading.svg'
 
-function Error (props) {
+function Error(props) {
 
     const { navigate } = props
 
@@ -16,7 +16,7 @@ function Error (props) {
 
     return (
         <div className='loading' style={{ background: Colors.dark }}>
-            <img src={codeally} alt='codeally'/>
+            <img src={codeally} alt='codeally' />
         </div>
     )
 }
