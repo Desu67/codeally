@@ -1,2 +1,0 @@
-# Codeally
-Welcome!
